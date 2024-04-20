@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "what_do_i_do_sections",
+  "info": {
+    "singularName": "what-do-i-do-section",
+    "pluralName": "what-do-i-do-sections",
+    "displayName": "WhatIDoSection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "jobs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::job.job"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "media_social_footers",
+  "info": {
+    "singularName": "media-social-footer",
+    "pluralName": "media-social-footers",
+    "displayName": "MediaSocialFooter"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "iconClassName": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

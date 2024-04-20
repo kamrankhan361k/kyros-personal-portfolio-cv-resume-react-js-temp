@@ -1,0 +1,363 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Kyros ReactJS Documentation</title>
+
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <section class="bg-color">
+      <div class="row">
+        <div class="col-md-3">
+          <h1 class="title">Kyros</h1>
+        </div>
+        <div class="col-md-7">Thank you for purchasing our Template. If you have any questions that are beyond the scope
+          of this help file, please feel free to ask via item's comments. Also please don't forget to give item ratings!
+          Thanks so much! :)
+        </div>
+        <div class="col-md-2 text-right"><a class="btn btn-primary mt15"
+            href="https://themeforest.net/user/on3stepthemes">View All Our Items</a></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Getting Started</h2>
+      <div class="expand">
+        <div class="title">How to Install</div>
+        <div class="content">
+          <ol class="alpha">
+            <li>
+              <strong>Node.js and NPM :</strong> You can download Node.js from <a href="https://nodejs.org"
+                target="_blank">https://nodejs.org.</a> please use Recommended For Most Users <a
+                href="https://nodejs.org/dist/v16.17.0/node-v16.17.0-x64.msi" target="_blank">16.17.0 LTS</a> NPM comes
+              bundled with Node.js.
+            </li>
+            <li>
+              <strong>NPM :</strong> You must have to npm install packages. You can do this by running <strong>npm
+                install</strong> from the root of your project to install all the necessary dependencies.
+            </li>
+            <li><strong>Run <i>npm start</i></strong> for a dev server. Navigate to http://localhost:3000/ . The app
+              will automatically reload if you change any of the source files.</li>
+            <li><strong>Run <i>npm run build</i></strong> to build the project. The build artifacts will be stored in
+              the build/ directory. Use the npm run build --prod flag for a production build.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="expand">
+        <div class="title">If not work using NPM try using Yarn</div>
+        <div class="content">
+          <ol class="alpha">
+            <li>add <strong>SKIP_PREFLIGHT_CHECK=true</strong> in file .env</li>
+            <li>Remove node module command <strong>rm -rf node_modules</strong></li>
+            <li>Delete <strong>package-lock.json</strong></li>
+            <li>Install Yarn <a href="https://yarnpkg.com/en/docs/install" target="_blank">(
+                https://yarnpkg.com/en/docs/install ).</a></li>
+            <li>Run <strong>yarn install</strong></li>
+            <li>Run <strong>yarn run start from the folder</strong></li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="expand">
+        <div class="title">How to use Strapi CMS </div>
+        <div class="content">
+          <p>Sync The root api frontend to your strapi CMS here </p>
+          <h2 class="root">Root folder <strong>src/core/api.js</strong></h2>
+          <img src="img/api.png" width="35%" height="35%" alt="img">
+          <p class="mt15">
+            this version uses <b>Strapi CMS</b> API to provide response for the front end side. if you're not familiar
+            with <b>Strapi</b> please check out their documentation.
+            <br>
+            note that we are currently using the latest strapi. so please refer to the <a
+              href="https://docs.strapi.io/" target="_blank">Strapi documentation</a>
+            <br>
+            to use the CMS please refer to the step above on how to get the Strapi CMS working in you local environment.
+            <br>
+            <br>
+            on this version the Register, Login and Profile page is working by using Strapi built in
+            function.
+            <br>
+            <br>
+          <b>Register, Login and Profile</b> is used to Register a new user for the CMS, this new user will have a
+          default Author collection created upon registering.
+          <br>
+          once you register for a user, you can use it to Login into the CMS from the front end login page. or you can
+          use this existing credential to Login
+          <pre>
+            Email : strapi.admin@mail.com
+            Password : NewSuperAdminPassword1
+          </pre>
+          after a successful Login then you can access the <b>Profile</b> page, this page is used to update the User
+          Profile Info.
+          you can upload a profile picture and a banner for the user and update the user information
+
+        </div>
+      </div>
+
+      <div class="expand">
+        <div class="title">Kyros Frontend to server </div>
+        <div class="content">
+          <h2 class="root">Zip Build folder from Frontend Kyros and upload it to your server (<strong>/build
+              folder</strong>)</h2>
+          <small class="mt20"><strong>You can use Share hosting server for Frontend </strong></small>
+        </div>
+      </div>
+
+      <div class="expand">
+        <div class="title">Strapi CMS to DigitalOcean Droplet</div>
+        <div class="content">
+          <h2 class="root">Since Kyros is using Node v18.14.2, DigitalOcean App deployment is not supported, instead
+            deploying to Droplet</h2>
+          <h3>Create SSH key</h3>
+          <ol class="alpha">
+            <li>in local terminal/git bash, generate ssh key by typing <b>ssh-keygen</b>, set filename then give
+              password</li>
+            <li>copy the text of public key : <b>cat id_rsa.pub</b></li>
+            <li>in digitalocean, create ssh key in the setting, select secuirty tab, click add SSH Key, then paste
+              public key text, give the name and click add SSH Key</li>
+          </ol>
+          <h3>Create and Access a Droplet in DigitalOcean</h3>
+          <ol class="alpha">
+            <li>create Droplet (shared VM) with strapi-capable spec (2GB, 1Core, 10GB)</li>
+            <li>fill in all mandatory info, choose SSH key previously created
+            <li>after Droplet created, access the droplet with root : go to droplet detail, click Access, the Launch Droplet
+              Console</li>
+            <li>create non-root user, “This to set up a new system user account with reduced privileges, and configure
+              this user to run administrative commands via "sudo"</li>
+            <li>in the console type <b>adduser &lt;username&gt; </b></li>
+            <li>add the new user to the sudo group : <b>usermod -aG sudo &lt;username&gt;</b></li>
+            <li>connect the droplet, in terminal/git bash : <b>ssh -i id_rsa &lt;username&gt;@&lt;server ip address&gt</b></li>
+          </ol>
+          
+          <h3>Setup Nginx as a Web Server</h3>
+          <ol class="alpha">
+            <li>in terminal/git bash type <b>sudo apt update</b> then <b>sudo apt install nginx</b></li>
+            <li>open firewall for HTTP : <b>sudo ufw allow 'Nginx HTTP'</b></li>
+            <li>check the firewall type <b>sudo ufw status</b></li>
+            <li>check the web server is running by typing <b>systemctl status nginx</b></li>
+          </ol>
+          <h3>Installing Node with NVM</h3>
+          <ol class="alpha">
+            <li>setup curl if not existed : <b>sudo apt install curl</b></li>
+            <li>install node and type <b>curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh |
+                bash</b></li>
+            <li>make this accessible globaly : <b>source ~/.profile</b></li>
+            <li>setup Node Version Manager for easy version node changes : <b>nvm install 18.14.2</b></li>
+            <li>make sure the NVM using the version : <b>nvm use v18.14.2</b></li>
+            <li>and make it to default version if rebooted/restarted : <b>nvm alias default v18.14.2</b></li>
+          </ol>
+          <h3>Transfer Project Files and Build</h3>
+          <ol class="alpha">
+            <li>Install Filezilla, create new connection, set the server IP, select logon type to Ask password, set username (non-root), and
+              then connect and fill the password</li>
+            <li>transfer the kyros-strapi folder to the path /home/&lt;username&gt;/</li>
+            <li>optionally you can transfer with other tools like WinSCP, Putty or cloning from GIT</li>
+            <li>in terminal/git bash, connect to the droplet : <b>ssh -i id_rsa &lt;username&gt;@&lt;server ip address&gt</b></li>
+            <li>go the the project path, then <b>npm install</b> or <b>yarn install</b> (if yarn not existed : <b>npm
+                install yarn -g</b>)</li>
+            <li>build the project for production : <b>NODE_ENV=production npm run build</b> or <b>NODE_ENV=production
+                yarn build</b></li>
+          </ol>
+
+          <h3>Install and Configure PM2 (Process Manager) Runtime</h3>
+          <p>“PM2 makes it possible to daemonize applications so that they will run in the background as a service.”</p>
+          <ol class="alpha">
+            <li>edit this js file : <b>nano ecosystem.config.js</b>, then replace the text with following :
+              <div
+                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                <pre style="margin: 0; line-height: 125%">
+  module.exports = {
+    apps: [
+      {
+        name: 'strapi',
+        cwd: '/home/&lt;username&gt;/kyros-strapi',
+        script: 'npm',
+        args: 'start',
+        env: {
+          NODE_ENV: 'production',
+          HOST:'127.0.0.1',
+          PORT='1337',
+        },
+      },
+    ],
+  };
+  </pre>
+            </li>
+            <li>enable firewall to the specific port since strapi listen port 1337 : <b>sudo ufw allow 1337/tcp</b> then
+              <b>sudo ufw enable</b></li>
+            <li>install PM2 : <b>sudo npm install pm2@latest -g</b></li>
+            <li>check if the js file can run in background : <b>pm2 start ecosystem.config.js</b></li>
+            <li>make the js run in the startup : <b>pm2 startup systemd</b></li>
+            <li>run the command from the output</li>
+            <li>save it : <b>pm2 save</b></li>
+            <li>finally reboot to check whether it’s starting and running : <b>sudo reboot</b></li>
+          </ol>
+          <h3>Test and Create Admin Account</h3>
+          <ol class="alpha">
+            <li>in the browser, browse to <b>&lt;server ip address&gt;:1337/admin</b></li>
+            <li>create admin account, set username and password</li>
+            <li>use this url <b>&lt;server ip address&gt:1337/admin</b> in the api.js configuration file of Kyros frontends
+            </li>
+          </ol>
+
+          <h3>References</h3>
+          <ul>
+            <li><a href="https://docs.strapi.io/dev-docs/deployment/digitalocean">Strapi DigitalOcean Deployment</a>
+            </li>
+            <li><a
+                href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04">Initial
+                Setup Ubuntu</a></li>
+            <li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04">Install
+                Nginx on Ubuntu</a></li>
+            <li><a
+                href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-20-04">Setup
+                Node Application for Ubuntu</a></li>
+          </ul>
+
+        </div>
+      </div>
+
+      <div class="expand">
+        <div class="title">Strapi CMS to other server </div>
+        <div class="content">
+          <h2 class="root">Check this reference for other server like AWS, Azure and Heroku </h2>
+          <small class="mt20"><strong><a href="https://docs.strapi.io/dev-docs/deployment/hosting-guides">Strapi Hosting
+                Provider Guides</a> </strong></small>
+        </div>
+      </div>
+      
+    </section>
+
+    <section>
+      <h2>Basics</h2>
+
+      <div class="expand">
+        <div class="title">Create Columns</div>
+        <div class="content">
+          <p>For a simple two column layout, create a <strong>.row</strong> and add the appropriate number of
+            <strong>.col-md-*</strong> columns. As this is a 12-column grid, each <strong>.col-md-*</strong> spans a
+            number of those 12 columns, and should always add up to 12 for each row (or the number of columns in the
+            parent).
+          </p>
+
+          <p>Please read more for Bootstrap grid system here: <a
+              href="https://getbootstrap.com/docs/4.5/layout/grid/">https://getbootstrap.com/docs/4.5/layout/grid/</a>
+          </p>
+
+          <pre>&lt;div className=&quot;<strong>row</strong>&quot;&gt;<br>     &lt;div className=&quot;<strong>col-md-6</strong>&quot;&gt; this is 1/2 columns &lt;/div&gt;<br>     &lt;div className=&quot;<strong>col-md-6</strong>&quot;&gt; this is 1/2 columns &lt;/div&gt;<br>&lt;/div&gt;
+
+&lt;div className=&quot;<strong>row</strong>&quot;&gt;<br>     &lt;div className=&quot;<strong>col-md-4</strong>&quot;&gt; this is 1/3 columns &lt;/div&gt;<br>     &lt;div className=&quot;<strong>col-md-8</strong>&quot;&gt; this is 2/3 columns &lt;/div&gt;<br>&lt;/div&gt;
+
+&lt;div className=&quot;<strong>row</strong>&quot;&gt;<br>     &lt;div className=&quot;<strong>col-md-3</strong>&quot;&gt; this is 1/4 columns &lt;/div&gt;<br>     &lt;div className=&quot;<strong>col-md-9</strong>&quot;&gt; this is 3/4 columns &lt;/div&gt;<br>&lt;/div&gt;</pre>
+
+        </div>
+      </div>
+
+
+      <div class="expand">
+        <div class="title">Animate object on scroll</div>
+        <div class="content">
+          <!-- HTML generated using hilite.me -->
+          <div
+            style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <pre style="margin: 0; line-height: 125%"><span style="font-weight: bold">import</span> React from <span style="font-style: italic">&#39;react&#39;</span>;
+<span style="font-weight: bold">import</span> AOS from <span style="font-style: italic">&#39;aos&#39;</span>;
+
+AOS.init({
+  offset: 200,
+  duration: 800,
+  easing: <span style="font-style: italic">&#39;ease-in-out-sine&#39;</span>,
+  delay: 200,
+  mirror: <span style="font-weight: bold">true</span>
+});
+
+
+&lt;div data-aos=<span style="font-style: italic">&quot;fade-up&quot;</span>
+    data-aos-delay=<span style="font-style: italic">&quot;0&quot;</span>
+    data-aos-duration=<span style="font-style: italic">&quot;1000&quot;</span>
+    data-aos-easing=<span style="font-style: italic">&quot;ease&quot;</span>
+    data-aos-once=<span style="font-style: italic">&quot;true&quot;</span>&gt;
+    I Am Kyros Noriaki
+&lt;<span style="border: 1px solid #FF0000">/div&gt;</span>
+</pre>
+          </div>
+
+
+
+        </div>
+      </div>
+
+      <div class="expand">
+        <div class="title">Contact Form</div>
+        <div class="content">
+          <h4><strong>How to send mail throught contact form</strong></h4>
+          <p>Send email from React without backend ( <a href="https://www.emailjs.com/docs/examples/reactjs/"
+              target="_blank">https://www.emailjs.com/docs/examples/reactjs/</a>) and follow bellow screenshot here and
+            also follow this video ( <a href="https://youtu.be/t1_kviNJsy4"
+              target="_blank">https://youtu.be/t1_kviNJsy4</a>)</p>
+
+          <img src="img/contact.png" alt="assetimg">
+        </div>
+      </div>
+
+    </section>
+
+
+    <section>
+      <h2>SCSS Files</h2>
+
+      <div class="expand">
+        <div class="title">List of CSS files</div>
+        <div class="content">
+          <!-- HTML generated using hilite.me -->
+          <div
+            style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <pre style="margin: 0; line-height: 125%"><span style="font-style: italic">/* Kyros</span>
+<span style="font-style: italic">/* created by on3stepThemes</span>
+
+
+<span style="font-style: italic">==================================================</span>
+<span style="font-style: italic">Table of Content</span>
+<span style="font-style: italic">================================================== </span>
+<span style="font-style: italic">* color</span>
+<span style="font-style: italic">* font</span>
+<span style="font-style: italic">* general</span>
+<span style="font-style: italic">* preloader</span>
+<span style="font-style: italic">* mouse</span>
+<span style="font-style: italic">* menu</span>
+<span style="font-style: italic">* Galery</span>
+<span style="font-style: italic">* resume</span>
+<span style="font-style: italic">* blog</span>
+<span style="font-style: italic">* contact</span>
+<span style="font-style: italic">* to top </span>
+<span style="font-style: italic">* footer</span>
+<span style="font-style: italic">* new skills bar</span>
+<span style="font-style: italic">* media all */</span>
+</pre>
+          </div>
+
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+</body>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/easing.js"></script>
+<script src="js/custom.js"></script>
+
+</html>

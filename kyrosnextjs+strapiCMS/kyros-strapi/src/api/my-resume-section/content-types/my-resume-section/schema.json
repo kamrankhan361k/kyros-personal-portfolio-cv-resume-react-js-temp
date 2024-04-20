@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "my_resume_sections",
+  "info": {
+    "singularName": "my-resume-section",
+    "pluralName": "my-resume-sections",
+    "displayName": "MyResumeSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "experiences": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::experience.experience"
+    },
+    "educations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::education.education"
+    }
+  }
+}

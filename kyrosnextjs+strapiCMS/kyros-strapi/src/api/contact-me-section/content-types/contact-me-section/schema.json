@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact_me_sections",
+  "info": {
+    "singularName": "contact-me-section",
+    "pluralName": "contact-me-sections",
+    "displayName": "ContactMeSection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

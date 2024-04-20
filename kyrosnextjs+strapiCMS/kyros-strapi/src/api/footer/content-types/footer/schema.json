@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "footers",
+  "info": {
+    "singularName": "footer",
+    "pluralName": "footers",
+    "displayName": "Footer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "copyright": {
+      "type": "string"
+    },
+    "media_social_footers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::media-social-footer.media-social-footer"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

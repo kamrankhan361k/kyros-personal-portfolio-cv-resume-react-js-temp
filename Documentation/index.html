@@ -1,0 +1,391 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Kyros ReactJS Documentation</title>
+
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="screen">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<section class="bg-color">
+        	<div class="row">
+            	<div class="col-md-3">
+            	  <h1 class="title">Kyros</h1>
+           	  </div>
+                <div class="col-md-7">Thank you for purchasing our Template. If you have any questions that are beyond the scope of this help file, please feel free to ask via item's comments. Also please don't forget to give item ratings! Thanks so much! :)
+</div>
+                <div class="col-md-2 text-right"><a class="btn btn-primary mt15" href="https://themeforest.net/user/on3stepthemes">View All Our Items</a></div>
+            </div>
+    </section>
+
+    <section>
+		<h2>Getting Started</h2>
+		<div class="expand">
+			<div class="title">How to Install</div>
+			<div class="content">
+			<ol class="alpha">
+			  <li>
+          <strong>Node.js and NPM :</strong> You can download Node.js from <a href="https://nodejs.org" target="_blank">https://nodejs.org.</a> please use Recommended For Most Users <a href="https://nodejs.org/dist/v16.17.0/node-v16.17.0-x64.msi" target="_blank">16.17.0 LTS</a> NPM comes bundled with Node.js.
+        </li>
+			  <li>
+          <strong>NPM :</strong> You must have to npm install packages. You can do this by running <strong>npm install</strong> from the root of your project to install all the necessary dependencies.
+        </li>
+			  <li><strong>Run <i>npm start</i></strong> for a dev server. Navigate to http://localhost:3000/ . The app will automatically reload if you change any of the source files.</li>
+			  <li><strong>Run <i>npm run build</i></strong> to build the project. The build artifacts will be stored in the build/ directory. Use the npm run build --prod flag for a production build.</li>
+			</ol>
+			</div>
+		</div>
+
+    <div class="expand">
+        <div class="title">If not work using NPM try using Yarn</div>
+        <div class="content">
+
+        <ol class="alpha">
+          <li>add <strong>SKIP_PREFLIGHT_CHECK=true</strong> in file .env</li>
+          <li>Remove node module command <strong>rm -rf node_modules</strong></li>
+          <li>Delete <strong>package-lock.json</strong></li>
+          <li>Install Yarn <a href="https://yarnpkg.com/en/docs/install" target="_blank">( https://yarnpkg.com/en/docs/install ).</a></li>
+          <li>Run <strong>yarn install</strong></li>
+          <li>Run <strong>yarn run start from the folder</strong></li>
+        </ol>
+
+      </div>
+    </div>
+
+
+  
+
+		<div class="expand">
+			<div class="title">Structure Template</div>
+
+			<div class="content">
+				<pre>
+
+				Kyros 
+				// root folder
+				+
+				template
+				├───public
+				│       ├───images	   -- all images, icon and root index file
+				└───src
+				│  ├───index.js
+                                │  ├───main.js            -- set path router here
+                                │  │   ├───section        -- all section js (inclcude footer)
+                                │  │   ├───pages          -- all pages js include style js perpages
+                                │  │   ├───layout         -- all layout js (inclcude navbar)
+                                │  │   ├───assets       
+				│  │   │   └───style.scss   -- css style here
+				   
+				+
+				</pre>
+			</div>
+
+		</div>
+
+    <div class="expand">
+      <div class="title">Asset Images and video</div>
+      <div class="content">
+        <h4>For images From the template file go to <strong>public/img</strong></h4>
+         <img src="img/assetimg.png" alt="assetimg"> 
+        <h4>For video From the template file go to <strong>public/video</strong></h4>
+        <img src="img/assetvideo.png" alt="assetimg"> 
+      </div>
+    </div>
+
+    
+
+		<div class="expand">
+			<div class="title">Header Structure How to change Logo </div>
+			<div class="content">
+        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="font-weight: bold">import</span> React, { useEffect, useState } from <span style="font-style: italic">&quot;react&quot;</span>;
+<span style="font-weight: bold">import</span> { Link } from <span style="font-style: italic">&quot;react-scroll&quot;</span>;
+
+
+<span style="font-weight: bold">const</span> Navbar= <span style="font-weight: bold">function</span>() {
+
+  <span style="font-weight: bold">const</span> [showmenu, btn_icon] = useState(<span style="font-weight: bold">false</span>);
+  useEffect(() =&gt; {
+    <span style="font-weight: bold">const</span> header = document.getElementById(<span style="font-style: italic">&quot;header-wrap&quot;</span>);
+    <span style="font-weight: bold">const</span> flytext = document.getElementById(<span style="font-style: italic">&quot;fly&quot;</span>);
+    <span style="font-weight: bold">const</span> totop = document.getElementById(<span style="font-style: italic">&quot;scroll-to-top&quot;</span>);
+    <span style="font-weight: bold">const</span> sticky = header.offsetTop;
+    <span style="font-weight: bold">const</span> scrollCallBack = window.addEventListener(<span style="font-style: italic">&quot;scroll&quot;</span>, () =&gt; {
+       btn_icon(<span style="font-weight: bold">false</span>);
+        <span style="font-weight: bold">if</span> (window.pageYOffset &gt; sticky) {
+          header.classList.add(<span style="font-style: italic">&quot;sticky&quot;</span>);
+          totop.classList.add(<span style="font-style: italic">&quot;show&quot;</span>);
+          flytext.classList.add(<span style="font-style: italic">&quot;hide&quot;</span>);
+        } <span style="font-weight: bold">else</span> {
+          header.classList.remove(<span style="font-style: italic">&quot;sticky&quot;</span>);
+          flytext.classList.remove(<span style="font-style: italic">&quot;hide&quot;</span>);
+          totop.classList.remove(<span style="font-style: italic">&quot;show&quot;</span>);
+        } 
+      });
+      <span style="font-weight: bold">return</span> () =&gt; {
+        window.removeEventListener(<span style="font-style: italic">&quot;scroll&quot;</span>, scrollCallBack);
+      };
+    }, []);
+    <span style="font-weight: bold">return</span>(
+        &lt;nav className=<span style="font-style: italic">&quot;navbar transition&quot;</span>&gt;
+        &lt;div className=<span style="font-style: italic">&quot;container&quot;</span>&gt;
+          &lt;Link  className=<span style="font-style: italic">&quot;navbar-brand&quot;</span> activeClass=<span style="font-style: italic">&quot;active&quot;</span> spy to=<span style="font-style: italic">&quot;hero-area&quot;</span>&gt;
+            &lt;img src=<span style="font-style: italic;  background: red;">&quot;./img/logo.png&quot;</span> className=<span style="font-style: italic">&quot;img-fluid d-block imginit&quot;</span> alt=<span style="font-style: italic">&quot;logo&quot;</span>/&gt;
+            &lt;img src=<span style="font-style: italic; background: red;">&quot;./img/logo-3.png&quot;</span> className=<span style="font-style: italic">&quot;img-fluid imgsaly&quot;</span> alt=<span style="font-style: italic">&quot;logo&quot;</span>/&gt;
+            &lt;img src=<span style="font-style: italic; background: red;">&quot;./img/logo-6.png&quot;</span> className=<span style="font-style: italic">&quot;img-fluid imggrey&quot;</span> alt=<span style="font-style: italic">&quot;logo&quot;</span>/&gt;
+            &lt;img src=<span style="font-style: italic; background: red;">&quot;./img/logo-7.png&quot;</span> className=<span style="font-style: italic">&quot;img-fluid imgchef&quot;</span> alt=<span style="font-style: italic">&quot;logo&quot;</span>/&gt;
+            &lt;img src=<span style="font-style: italic; background: red;">&quot;./img/logo-5.png&quot;</span> className=<span style="font-style: italic">&quot;img-fluid imgdesigner&quot;</span> alt=<span style="font-style: italic">&quot;logo&quot;</span>/&gt;
+            &lt;img src=<span style="font-style: italic; background: red;">&quot;./img/logo-4.png&quot;</span> className=<span style="font-style: italic">&quot;img-fluid imglawyer&quot;</span> alt=<span style="font-style: italic">&quot;logo&quot;</span>/&gt;
+          &lt;<span style="border: 1px solid #FF0000">/Link&gt;</span>
+          {<span style="font-style: italic">/* Desktop menu Here */</span>}
+          &lt;div className=<span style="font-style: italic">&quot;dekstopmenu&quot;</span>&gt;
+             &lt;ul className=<span style="font-style: italic">&quot;navbar-nav&quot;</span>&gt;
+              &lt;li className=<span style="font-style: italic">&quot;nav-item&quot;</span>&gt;
+                &lt;Link className=<span style="font-style: italic">&quot;nav-link transition&quot;</span> activeClass=<span style="font-style: italic">&quot;active&quot;</span> spy to=<span style="font-style: italic">&quot;hero-area&quot;</span>&gt;
+                  Home
+                &lt;<span style="border: 1px solid #FF0000">/Link&gt;</span>
+              &lt;<span style="border: 1px solid #FF0000">/li&gt;</span>
+              &lt;li className=<span style="font-style: italic">&quot;nav-item&quot;</span>&gt;
+                &lt;Link className=<span style="font-style: italic">&quot;nav-link transition&quot;</span> activeClass=<span style="font-style: italic">&quot;active&quot;</span> spy to=<span style="font-style: italic">&quot;about&quot;</span>&gt;
+                  About me
+                &lt;<span style="border: 1px solid #FF0000">/Link&gt;</span>
+              &lt;<span style="border: 1px solid #FF0000">/li&gt;</span>
+              &lt;li className=<span style="font-style: italic">&quot;nav-item&quot;</span>&gt;
+                &lt;Link className=<span style="font-style: italic">&quot;nav-link transition&quot;</span> activeClass=<span style="font-style: italic">&quot;active&quot;</span> spy to=<span style="font-style: italic">&quot;whatido&quot;</span>&gt;
+                  What I Do
+                &lt;<span style="border: 1px solid #FF0000">/Link&gt;</span>
+              &lt;<span style="border: 1px solid #FF0000">/li&gt;</span>
+              &lt;li className=<span style="font-style: italic">&quot;nav-item&quot;</span>&gt;
+                &lt;Link className=<span style="font-style: italic">&quot;nav-link transition&quot;</span> activeClass=<span style="font-style: italic">&quot;active&quot;</span> spy to=<span style="font-style: italic">&quot;gallery&quot;</span>&gt;
+                  Portofolio
+                &lt;<span style="border: 1px solid #FF0000">/Link&gt;</span>
+              &lt;<span style="border: 1px solid #FF0000">/li&gt;</span>
+              &lt;li className=<span style="font-style: italic">&quot;nav-item&quot;</span>&gt;
+                &lt;Link className=<span style="font-style: italic">&quot;nav-link transition&quot;</span> activeClass=<span style="font-style: italic">&quot;active&quot;</span> spy to=<span style="font-style: italic">&quot;resume&quot;</span>&gt;
+                  My resume
+                &lt;<span style="border: 1px solid #FF0000">/Link&gt;</span>
+              &lt;<span style="border: 1px solid #FF0000">/li&gt;</span>
+              &lt;li className=<span style="font-style: italic">&quot;nav-item&quot;</span>&gt;
+                &lt;Link className=<span style="font-style: italic">&quot;nav-link transition&quot;</span> activeClass=<span style="font-style: italic">&quot;active&quot;</span> spy to=<span style="font-style: italic">&quot;blog&quot;</span>&gt;
+                  Blog
+                &lt;<span style="border: 1px solid #FF0000">/Link&gt;</span>
+              &lt;<span style="border: 1px solid #FF0000">/li&gt;</span>
+              &lt;li className=<span style="font-style: italic">&quot;nav-item&quot;</span>&gt;
+                &lt;Link className=<span style="font-style: italic">&quot;nav-link transition&quot;</span> activeClass=<span style="font-style: italic">&quot;active&quot;</span> spy to=<span style="font-style: italic">&quot;contact&quot;</span>&gt;
+                  Contact Me
+                &lt;<span style="border: 1px solid #FF0000">/Link&gt;</span>
+              &lt;<span style="border: 1px solid #FF0000">/li&gt;</span>
+            &lt;<span style="border: 1px solid #FF0000">/ul&gt;</span>
+          &lt;<span style="border: 1px solid #FF0000">/div&gt;</span>
+          {<span style="font-style: italic">/* Desktop menu Here */</span>}
+
+          {<span style="font-style: italic">/* mobile menu here */</span>}
+          {showmenu &amp;&amp; 
+          &lt;div className=<span style="font-style: italic">&quot;mobilemenu&quot;</span> &gt;
+            &lt;ul className=<span style="font-style: italic">&quot;navbar-nav mr-auto w-100 justify-content-end clearfix&quot;</span>&gt;
+              &lt;li className=<span style="font-style: italic">&quot;nav-item&quot;</span>&gt;
+                &lt;Link className=<span style="font-style: italic">&quot;nav-link&quot;</span> activeClass=<span style="font-style: italic">&quot;active&quot;</span> smooth spy to=<span style="font-style: italic">&quot;hero-area&quot;</span>&gt;
+                  Home
+                &lt;<span style="border: 1px solid #FF0000">/Link&gt;</span>
+              &lt;<span style="border: 1px solid #FF0000">/li&gt;</span>
+              &lt;li className=<span style="font-style: italic">&quot;nav-item&quot;</span>&gt;
+                &lt;Link className=<span style="font-style: italic">&quot;nav-link&quot;</span> activeClass=<span style="font-style: italic">&quot;active&quot;</span> smooth spy to=<span style="font-style: italic">&quot;about&quot;</span>&gt;
+                  About me
+                &lt;<span style="border: 1px solid #FF0000">/Link&gt;</span>
+              &lt;<span style="border: 1px solid #FF0000">/li&gt;</span>
+              &lt;li className=<span style="font-style: italic">&quot;nav-item&quot;</span>&gt;
+                &lt;Link className=<span style="font-style: italic">&quot;nav-link transition&quot;</span> smooth activeClass=<span style="font-style: italic">&quot;active&quot;</span> spy to=<span style="font-style: italic">&quot;whatido&quot;</span>&gt;
+                  What I Do
+                &lt;<span style="border: 1px solid #FF0000">/Link&gt;</span>
+              &lt;<span style="border: 1px solid #FF0000">/li&gt;</span>
+              &lt;li className=<span style="font-style: italic">&quot;nav-item&quot;</span>&gt;
+                &lt;Link className=<span style="font-style: italic">&quot;nav-link transition&quot;</span> smooth activeClass=<span style="font-style: italic">&quot;active&quot;</span> spy to=<span style="font-style: italic">&quot;gallery&quot;</span>&gt;
+                  Portofolio
+                &lt;<span style="border: 1px solid #FF0000">/Link&gt;</span>
+              &lt;<span style="border: 1px solid #FF0000">/li&gt;</span>
+              &lt;li className=<span style="font-style: italic">&quot;nav-item&quot;</span>&gt;
+                &lt;Link className=<span style="font-style: italic">&quot;nav-link transition&quot;</span> smooth activeClass=<span style="font-style: italic">&quot;active&quot;</span> spy to=<span style="font-style: italic">&quot;resume&quot;</span>&gt;
+                  My resume
+                &lt;<span style="border: 1px solid #FF0000">/Link&gt;</span>
+              &lt;<span style="border: 1px solid #FF0000">/li&gt;</span>
+              &lt;li className=<span style="font-style: italic">&quot;nav-item&quot;</span>&gt;
+                &lt;Link className=<span style="font-style: italic">&quot;nav-link transition&quot;</span>smooth activeClass=<span style="font-style: italic">&quot;active&quot;</span> spy to=<span style="font-style: italic">&quot;blog&quot;</span>&gt;
+                  Blog
+                &lt;<span style="border: 1px solid #FF0000">/Link&gt;</span>
+              &lt;<span style="border: 1px solid #FF0000">/li&gt;</span>
+              &lt;li className=<span style="font-style: italic">&quot;nav-item&quot;</span>&gt;
+                &lt;Link className=<span style="font-style: italic">&quot;nav-link transition&quot;</span> smooth activeClass=<span style="font-style: italic">&quot;active&quot;</span> spy to=<span style="font-style: italic">&quot;contact&quot;</span>&gt;
+                  Contact Me
+                &lt;<span style="border: 1px solid #FF0000">/Link&gt;</span>
+              &lt;<span style="border: 1px solid #FF0000">/li&gt;</span>
+            &lt;<span style="border: 1px solid #FF0000">/ul&gt;</span>
+          &lt;<span style="border: 1px solid #FF0000">/div&gt;</span>
+          }
+          &lt;button className=<span style="font-style: italic">&quot;burgermenu&quot;</span> type=<span style="font-style: italic">&quot;button&quot;</span> onClick={() =&gt; btn_icon(!showmenu)}&gt;
+            &lt;i className=<span style="font-style: italic">&quot;fa fa-bars&quot;</span> aria-hidden=<span style="font-style: italic">&quot;true&quot;</span>&gt;&lt;<span style="border: 1px solid #FF0000">/i&gt;</span>
+          &lt;<span style="border: 1px solid #FF0000">/button&gt;</span>
+          {<span style="font-style: italic">/* mobile menu here */</span>}
+        &lt;<span style="border: 1px solid #FF0000">/div&gt;</span>
+      &lt;<span style="border: 1px solid #FF0000">/nav&gt;</span>
+    )
+}
+
+<span style="font-weight: bold">export</span> <span style="font-weight: bold">default</span> Navbar;
+</pre></div>
+
+      </div>
+		</div>
+
+		<div class="expand">
+			<div class="title">Footer Structure How to change Copyright ?</div>
+			<div class="content">
+				
+        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="font-weight: bold">import</span> React from <span style="font-style: italic">&#39;react&#39;</span>;
+
+<span style="font-weight: bold">const</span> footer = () =&gt; {
+    <span style="font-weight: bold">return</span>(
+        &lt;footer&gt;
+            &lt;div className=<span style="font-style: italic">&quot;container&quot;</span>&gt;
+                &lt;div className=<span style="font-style: italic">&quot;row&quot;</span>&gt;
+                    &lt;div className=<span style="font-style: italic">&quot;col-md-6&quot;</span>&gt;
+                        &lt;a href=<span style="font-style: italic">&quot;https://www.envato.com&quot;</span> target=<span style="font-style: italic">&quot;_blank&quot;</span> rel=<span style="font-style: italic">&quot;noreferrer&quot;</span>&gt;
+                            &lt;span className=<span style="font-style: italic; background:red">&quot;copy&quot;&gt;&amp;copy; Copyright 2022 - Kyros by Designesia&lt;</span><span style="border: 1px solid #FF0000">/span&gt;</span>
+                        &lt;<span style="border: 1px solid #FF0000">/a&gt;</span>
+                    &lt;<span style="border: 1px solid #FF0000">/div&gt;</span>
+                    &lt;div className=<span style="font-style: italic">&quot;col-md-6&quot;</span>&gt;
+                        &lt;div className=<span style="font-style: italic">&quot;social-icons&quot;</span>&gt;
+                            &lt;a href=<span style="font-style: italic">&quot;https://www.facebook.com/&quot;</span> rel=<span style="font-style: italic">&quot;noreferrer&quot;</span>&gt;&lt;i className=<span style="font-style: italic">&quot;fa fa-facebook&quot;</span>&gt;&lt;<span style="border: 1px solid #FF0000">/i&gt;&lt;/a&gt;</span>
+                            &lt;a href=<span style="font-style: italic">&quot;https://twitter.com&quot;</span> rel=<span style="font-style: italic">&quot;noreferrer&quot;</span>&gt;&lt;i className=<span style="font-style: italic">&quot;fa fa-twitter&quot;</span>&gt;&lt;<span style="border: 1px solid #FF0000">/i&gt;&lt;/a&gt;</span>
+                            &lt;a href=<span style="font-style: italic">&quot;https://www.linkedin.com/&quot;</span> rel=<span style="font-style: italic">&quot;noreferrer&quot;</span>&gt;&lt;i className=<span style="font-style: italic">&quot;fa fa-linkedin&quot;</span>&gt;&lt;<span style="border: 1px solid #FF0000">/i&gt;&lt;/a&gt;</span>
+                            &lt;a href=<span style="font-style: italic">&quot;https://pinterest.com/&quot;</span> rel=<span style="font-style: italic">&quot;noreferrer&quot;</span>&gt;&lt;i className=<span style="font-style: italic">&quot;fa fa-pinterest&quot;</span>&gt;&lt;<span style="border: 1px solid #FF0000">/i&gt;&lt;/a&gt;</span>
+                            &lt;a href=<span style="font-style: italic">&quot;https://www.envato.com&quot;</span> target=<span style="font-style: italic">&quot;_blank&quot;</span> rel=<span style="font-style: italic">&quot;noreferrer&quot;</span>&gt;&lt;i className=<span style="font-style: italic">&quot;fa fa-rss&quot;</span>&gt;&lt;<span style="border: 1px solid #FF0000">/i&gt;&lt;/a&gt;</span>
+                        &lt;<span style="border: 1px solid #FF0000">/div&gt;</span>
+                    &lt;<span style="border: 1px solid #FF0000">/div&gt;</span>
+                &lt;<span style="border: 1px solid #FF0000">/div&gt;</span>
+            &lt;<span style="border: 1px solid #FF0000">/div&gt;</span>
+        &lt;<span style="border: 1px solid #FF0000">/footer&gt;</span>
+    );
+}
+
+<span style="font-weight: bold">export</span> <span style="font-weight: bold">default</span> footer;
+</pre></div>
+
+
+			</div>
+		</div>
+
+	</section>
+
+	</section>
+    
+    <section>
+		<h2>Basics</h2>
+		
+		<div class="expand">
+			<div class="title">Create Columns</div>
+			<div class="content">
+            <p>For a simple two column layout, create a <strong>.row</strong> and add the appropriate number of <strong>.col-md-*</strong> columns. As this is a 12-column grid, each <strong>.col-md-*</strong> spans a number of those 12 columns, and should always add up to 12 for each row (or the number of columns in the parent).</p>
+			
+			<p>Please read more for Bootstrap grid system here: <a href="https://getbootstrap.com/docs/4.5/layout/grid/">https://getbootstrap.com/docs/4.5/layout/grid/</a></p>
+			
+      <pre>&lt;div className=&quot;<strong>row</strong>&quot;&gt;<br>     &lt;div className=&quot;<strong>col-md-6</strong>&quot;&gt; this is 1/2 columns &lt;/div&gt;<br>     &lt;div className=&quot;<strong>col-md-6</strong>&quot;&gt; this is 1/2 columns &lt;/div&gt;<br>&lt;/div&gt;
+
+&lt;div className=&quot;<strong>row</strong>&quot;&gt;<br>     &lt;div className=&quot;<strong>col-md-4</strong>&quot;&gt; this is 1/3 columns &lt;/div&gt;<br>     &lt;div className=&quot;<strong>col-md-8</strong>&quot;&gt; this is 2/3 columns &lt;/div&gt;<br>&lt;/div&gt;
+
+&lt;div className=&quot;<strong>row</strong>&quot;&gt;<br>     &lt;div className=&quot;<strong>col-md-3</strong>&quot;&gt; this is 1/4 columns &lt;/div&gt;<br>     &lt;div className=&quot;<strong>col-md-9</strong>&quot;&gt; this is 3/4 columns &lt;/div&gt;<br>&lt;/div&gt;</pre>
+
+			</div>
+		</div>
+
+
+		<div class="expand">
+			<div class="title">Animate object on scroll</div>
+			<div class="content">
+				<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="font-weight: bold">import</span> React from <span style="font-style: italic">&#39;react&#39;</span>;
+<span style="font-weight: bold">import</span> AOS from <span style="font-style: italic">&#39;aos&#39;</span>;
+
+AOS.init({
+  offset: 200,
+  duration: 800,
+  easing: <span style="font-style: italic">&#39;ease-in-out-sine&#39;</span>,
+  delay: 200,
+  mirror: <span style="font-weight: bold">true</span>
+});
+
+
+&lt;div data-aos=<span style="font-style: italic">&quot;fade-up&quot;</span>
+    data-aos-delay=<span style="font-style: italic">&quot;0&quot;</span>
+    data-aos-duration=<span style="font-style: italic">&quot;1000&quot;</span>
+    data-aos-easing=<span style="font-style: italic">&quot;ease&quot;</span>
+    data-aos-once=<span style="font-style: italic">&quot;true&quot;</span>&gt;
+    I Am Kyros Noriaki
+&lt;<span style="border: 1px solid #FF0000">/div&gt;</span>
+</pre></div>
+
+
+				
+			</div>
+		</div>
+
+    <div class="expand">
+      <div class="title">Contact Form</div>
+      <div class="content">
+        <h4><strong>How to send mail throught contact form</strong></h4>
+        <p>Send email from React without backend ( <a href="https://www.emailjs.com/docs/examples/reactjs/" target="_blank">https://www.emailjs.com/docs/examples/reactjs/</a>) and follow bellow screenshot here and also follow this video ( <a href="https://youtu.be/t1_kviNJsy4" target="_blank">https://youtu.be/t1_kviNJsy4</a>)</p>
+
+        <img src="img/contact.png" alt="assetimg"> 
+      </div>
+    </div>
+        
+	</section>
+    
+	    
+	<section>
+		<h2>SCSS Files</h2>
+	
+		<div class="expand">
+			<div class="title">List of CSS files</div>
+			<div class="content">
+				<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="font-style: italic">/* Kyros</span>
+<span style="font-style: italic">/* created by on3stepThemes</span>
+
+
+<span style="font-style: italic">==================================================</span>
+<span style="font-style: italic">Table of Content</span>
+<span style="font-style: italic">================================================== </span>
+<span style="font-style: italic">* color</span>
+<span style="font-style: italic">* font</span>
+<span style="font-style: italic">* general</span>
+<span style="font-style: italic">* preloader</span>
+<span style="font-style: italic">* mouse</span>
+<span style="font-style: italic">* menu</span>
+<span style="font-style: italic">* Galery</span>
+<span style="font-style: italic">* resume</span>
+<span style="font-style: italic">* blog</span>
+<span style="font-style: italic">* contact</span>
+<span style="font-style: italic">* to top </span>
+<span style="font-style: italic">* footer</span>
+<span style="font-style: italic">* new skills bar</span>
+<span style="font-style: italic">* media all */</span>
+</pre></div>
+
+
+            </div>
+		</div>
+		
+	</section>
+
+</div>
+	
+</body>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/easing.js"></script>
+    <script src="js/custom.js"></script>
+
+</html>

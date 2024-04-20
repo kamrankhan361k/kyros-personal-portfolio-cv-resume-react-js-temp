@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "counter_sections",
+  "info": {
+    "singularName": "counter-section",
+    "pluralName": "counter-sections",
+    "displayName": "CounterSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "backgroundImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "counters": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::counter.counter"
+    }
+  }
+}

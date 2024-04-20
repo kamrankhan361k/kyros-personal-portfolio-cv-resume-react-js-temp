@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "media_socials",
+  "info": {
+    "singularName": "media-social",
+    "pluralName": "media-socials",
+    "displayName": "MediaSocial",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "link": {
+      "type": "string"
+    },
+    "iconClassName": {
+      "type": "string"
+    }
+  }
+}
